@@ -49,7 +49,7 @@ cd tfeNullRemotePet
 - Get your user token by going to [here](https://app.terraform.io/app/settings/tokens) and enter a description, what the token is going to be used for, for example "exerciseToken" and click `generate`, copy the string.
 - Enter the token as environment variable :
 ```
-export ATLAS_TOKE=YOUR_TOKEN_HERE
+export ATLAS_TOKEN=YOUR_TOKEN_HERE
 ```
 - Execute `terraform init`.
 - Execute `terraform apply`. The output should look like this: 
