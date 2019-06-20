@@ -39,17 +39,18 @@ name = routinely-routinely-ample-ant # THIS NAME IS GOING TO BE USED
 
 ## Part 2:
 ----------------------------------
-- Now, go one directory back and clone [this](https://github.com/martinhristov90/tfeNullRemotePet.git) using :
+- Now, go one directory back and clone [this](https://github.com/martinhristov90/tfeNullRemotePet.git) repository using :
 ```
 cd ..
 git clone https://github.com/martinhristov90/tfeNullRemotePet.git
 cd tfeNullRemotePet
 ```
+- Susbsitude `ORG_NAME/WORKSPACE_NAME` in `main.tf` with the name of your organization and name of the workspace connected to GitHub.
 - This repository contains `main.tf` file which is going to consume the output section of the `state` file stored in the TFE workspace.
 - Get your user token by going to [here](https://app.terraform.io/app/settings/tokens) and enter a description, what the token is going to be used for, for example "exerciseToken" and click `generate`, copy the string.
 - Enter the token as environment variable :
-```
-export ATLAS_TOKE=YOUR_TOKEN_HERE
+```shell
+export ATLAS_TOKEN=YOUR_TOKEN_HERE
 ```
 - Execute `terraform init`.
 - Execute `terraform apply`. The output should look like this: 
