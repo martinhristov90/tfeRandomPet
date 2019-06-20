@@ -9,7 +9,9 @@
 ----------------------------------
 - Firstly, TFE workspace needs to be created, use the instructions form [here](https://www.terraform.io/docs/enterprise/workspaces/index.html)
 
-- Connect the workspace that has been created with VCS, in this case GitHub, using the instructions [here](https://www.terraform.io/docs/enterprise/vcs/index.html)
+- Create a GitHub repo named `repoTFE`.
+
+- Connect the workspace that has been created to VCS, in this case GitHub, using the instructions [here](https://www.terraform.io/docs/enterprise/vcs/index.html)
 
 - Now clone this repository and add your repository that is connected to TFE workspace :
 ```shell
@@ -39,16 +41,17 @@ name = routinely-routinely-ample-ant # THIS NAME IS GOING TO BE USED
 
 ## Part 2:
 ----------------------------------
-- Now, go one directory back and clone [this](https://github.com/martinhristov90/tfeNullRemotePet.git) using :
+- Now, go one directory back and clone [this](https://github.com/martinhristov90/tfeNullRemotePet.git) repository using :
 ```
 cd ..
 git clone https://github.com/martinhristov90/tfeNullRemotePet.git
 cd tfeNullRemotePet
 ```
+- Susbsitude `ORG_NAME/WORKSPACE_NAME` in `main.tf` with the name of your organization and name of the workspace connected to GitHub.
 - This repository contains `main.tf` file which is going to consume the output section of the `state` file stored in the TFE workspace.
 - Get your user token by going to [here](https://app.terraform.io/app/settings/tokens) and enter a description, what the token is going to be used for, for example "exerciseToken" and click `generate`, copy the string.
-- Enter the token as environment variable :
-```
+- Enter the token as environment variable:
+```shell
 export ATLAS_TOKEN=YOUR_TOKEN_HERE
 ```
 - Execute `terraform init`.
@@ -62,5 +65,5 @@ null_resource.hello: Creation complete after 0s [id=234437177665750948]
 
 Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 ```
-As you can see the by using the `terraform_remote_state` we were able to fetch the name of the random pet.
+As you can see by using the `terraform_remote_state` we were able to fetch the name of the random pet.
 
